@@ -41,8 +41,8 @@ public abstract class Conta implements IConta {
     public void debitoAutomatico(double valor, LocalDate diaDebito) {
         if (LocalDate.now().equals(diaDebito)) {
             sacar(valor);
+            diaDebito = diaDebito.plusMonths(1);
         }
-        diaDebito = LocalDate.now().plusMonths(1);
     }
 
     protected void imprimirInfosComuns() {

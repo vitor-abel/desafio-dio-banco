@@ -17,8 +17,8 @@ public class ContaSalario extends Conta {
     public void receberSalario(double valor, LocalDate diaPagamento) {
         if (LocalDate.now().equals(diaPagamento)) {
             depositar(valor);
+            diaPagamento = LocalDate.now().plusMonths(1);
         }
-        diaPagamento = LocalDate.now().plusMonths(1);
     }
 
 }
